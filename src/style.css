@@ -1,0 +1,82 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+.jetbrains-mono {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.clock {
+    float: right;
+    margin: 0;
+    color: aliceblue;
+}
+
+.clock a {
+    color: aliceblue;
+}
+
+.clock a:hover {
+    color: aliceblue;
+}
+
+header {
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 2px;
+    background-color: rgba(15, 15, 23, 0.975);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #27272E;
+}
+
+.center {
+    position: fixed;
+    left: 50%;
+    margin: 0;
+    color: aliceblue;
+}
+
+.left {
+    float: left;
+    margin: 0;
+    color: aliceblue;
+}
+
+.window {
+    position: absolute;
+    background-color: #27272E;
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+    color: aliceblue;
+}
+
+.windowheader {
+    margin: 0;
+}
+
+.windowcontent {
+    padding: 10px;
+}
+
+.headername {
+    float: left;
+    margin: 0;
+}
+
+.headerclose {
+    float: right;
+    margin: 0;
+}
