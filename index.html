@@ -11,22 +11,53 @@
     <title>REALinux OS</title>
 </head>
 <body>
-    <header>
-        <p id="left" class="left"><i class="fa-solid fa-circle"></i> <i class="fa-solid fa-pause" style="width: 5px; text-align: center; margin: auto; margin-left: 10px;"></i> Song™</p>
-        <p id="center" class="center">asdasd</p>
-        <p id="time" class="clock">00:00:00 Jan 1, 2026 <a href="https://zsobix.xyz"><i class="fa-solid fa-power-off"></i></a></p>
+    <!-- after ship, make this into a tiling window manager -->
+    <header id="topheader">
+        <p id="left" class="left"><i class="fa-solid fa-circle"></i> <i class="fa-solid fa-pause" style="width: 5px; text-align: center; margin: auto; margin-left: 10px;"></i> Some Song™</p>
+        <p id="center" class="center">REALinux OS</p>
+        <p id="time" class="clock"><i class="fa-solid fa-clock"></i> 00:00:00 <i class="fa-solid fa-calendar"></i> Jan 1, 2026 <a href="https://zsobix.xyz"><i class="fa-solid fa-power-off"></i></a></p>
         <div style="clear: both;"></div>
     </header>
-    <div id="window" class="window">
-        <header id="windowheader" class="windowheader">
-            <div class="headername">asdasd</div>
+    <div class="shortcuts">
+        <div class="shortcut" id="weatherwindowshortcut">
+            <div class="shortcuticon">
+                <i class="fa-solid fa-cloud-sun" style="font-size: 20px;"></i>
+            </div>
+            <div class="shortcuttext">
+                Weather
+            </div>
+        </div>
+        <div class="shortcut" id="starwindowshortcut">
+            <div class="shortcuticon">
+                <i class="fa-solid fa-star" style="font-size: 20px;"></i>
+            </div>
+            <div class="shortcuttext">
+                Stardance <br> Stats
+            </div>
+        </div>
+    </div>
+    <div id="weatherwindow" class="window" style="display: none;">
+        <header id="weatherwindowheader" class="windowheader">
+            <div class="headername">Weather <i class="fa-solid fa-cloud-sun"></i></div>
             <div class="headerclose"><i class="fa-solid fa-xmark"></i></div>
             <div style="clear: both;"></div>
         </header>
-        <div class="windowcontent">
-            LinuxLarp OS
+        <div class="windowcontent" id="weather">
+            Loading...
+        </div>
+    </div>
+    <div id="starwindow" class="window"  style="display: none;">
+        <header id="starwindowheader" class="windowheader">
+            <div class="headername">Stardance <i class="fa-solid fa-star"></i></div>
+            <div class="headerclose"><i class="fa-solid fa-xmark"></i></div>
+            <div style="clear: both;"></div>
+        </header>
+        <div class="windowcontent" id="stardance">
+            <input id="starinput" class="starinput inline" placeholder="Stardance username (without @)">
             <br>
-            brrrrrrrrrrr
+            <button class="starsave" id="starsave">Save</button>
+            <p id="error01" class="inter error" style="display: none;">Unknown username!</p>
+            <p id="error02" class="inter error" style="display: none;">Please fill the username field!</p>
         </div>
     </div>
 </body>

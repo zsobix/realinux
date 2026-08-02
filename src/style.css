@@ -1,5 +1,15 @@
-body {
+:root {
+    --input-color: hsl(0, 0%, 30%);
+    --input-hover-color: hsl(0, 0%, 40%);
+}
+
+html {
   font-family: "Inter", sans-serif;
+  background-image: url("../src/towers.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .inter {
@@ -65,10 +75,13 @@ header {
 
 .windowheader {
     margin: 0;
+    padding: 6px;
+    font-size: 15px;
 }
 
 .windowcontent {
-    padding: 10px;
+    padding: 25px;
+    font-size: 20px;
 }
 
 .headername {
@@ -79,4 +92,78 @@ header {
 .headerclose {
     float: right;
     margin: 0;
+}
+
+.shortcut {
+    margin: 10px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border-color: rgba(0, 0, 0, 0.6);
+    border-style: solid;
+    border-width: 4px;
+}
+
+.shortcuticon {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.shortcuttext {
+    text-align: center;
+}
+
+.starinput {
+    height: 20px;
+    width: 250px;
+    border-radius: 5dvh;
+    background-color: var(--input-color);
+    border-width: 3px;
+    border-style: dashed;
+    border-color: white;
+    font-size: 2.5vh;
+    padding: 5px;
+}
+
+.starinput::placeholder {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+}
+
+.starinput:focus {
+    outline: none;
+    border-style: solid;
+}
+
+.starsave{
+    width: 100%;
+    border-radius: 5dvh;
+    background-color: #27272E;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 5px;
+    transition: background-color 0.25s ease;
+}
+
+.starsave:hover{
+    background-color: var(--input-hover-color);
+    transition: background-color 0.25s ease;
+}
+
+.shortcuts {
+    width: fit-content;
 }
