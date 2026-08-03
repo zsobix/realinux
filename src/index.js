@@ -6,14 +6,10 @@ var maxzIndex = 1;
 function updateTime(){
     var label = document.getElementById("time")
     var date = new Date()
-    label.innerHTML = `<i class="fa-solid fa-clock"></i> ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')} <i class="fa-solid fa-calendar"></i> ${months[date.getMonth()]} ${String(date.getDate())}, ${String(date.getFullYear())}  <a href="https://zsobix.xyz"><i class="fa-solid fa-power-off"></i></a>`
+    label.innerHTML = `<i class="fa-solid fa-clock"></i> ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')} <i class="fa-solid fa-calendar"></i> ${months[date.getMonth()]} ${String(date.getDate())}, ${String(date.getFullYear())}  <a href="https://zsobix.xyz/safe"><i class="fa-solid fa-power-off"></i></a>`
 }
 updateTime()
 setInterval(updateTime, 1000)
-
-// Make the DIV element draggable:
-dragElement(document.getElementById("starwindow"));
-dragElement(document.getElementById("weatherwindow"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -71,12 +67,18 @@ var windows = document.getElementsByClassName("window")
 
 for (let i = 0; i < windows.length; i++) {
     windows[i].onmouseover = function(){
-        console.log(windows[i])
         maxzIndex++
         windows[i].style.zIndex = maxzIndex
         document.getElementById("topheader").style.zIndex = maxzIndex + 1;
-        document.getElementById("center").innerHTML = String(windows[i].id)
+        document.getElementById("center").innerHTML = String(windows[i].id).replace("window", "")
+
+        // DONT DO THIS PLS
+        for (let a = 0; a < windows.length; a++) {
+            windows[a].classList.remove("focused")
+        }
+        windows[i].classList.add("focused")
     }
+    dragElement(windows[i])
 }
 
 var close = document.getElementsByClassName("headerclose")
@@ -203,3 +205,19 @@ document.getElementById("starsave").onclick = function(){
             })
     }
 }
+
+if (localStorage.getItem("color") == null) {
+    localStorage.setItem("color",  "#FFFFFF")
+} else {
+    document.getElementById("colorpick").value = localStorage.getItem("color")
+}
+
+
+function updateColor(){
+    document.documentElement.style.setProperty("--primary-color", document.getElementById("colorpick").value);
+    localStorage.setItem("color",  document.getElementById("colorpick").value)
+}
+
+document.getElementById("colorpick").addEventListener("input", updateColor);
+
+document.documentElement.style.setProperty("--primary-color", localStorage.getItem("color"));

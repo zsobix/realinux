@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <title>REALinux OS</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
     <header id="topheader">
         <p id="left" class="left"><i class="fa-solid fa-circle"></i> <i class="fa-solid fa-pause" style="width: 5px; text-align: center; margin: auto; margin-left: 10px;"></i> Some Song™</p>
         <p id="center" class="center">REALinux OS</p>
-        <p id="time" class="clock"><i class="fa-solid fa-clock"></i> 00:00:00 <i class="fa-solid fa-calendar"></i> Jan 1, 2026 <a href="https://zsobix.xyz"><i class="fa-solid fa-power-off"></i></a></p>
+        <p id="time" class="clock"><i class="fa-solid fa-clock"></i> 00:00:00 <i class="fa-solid fa-calendar"></i> Jan 1, 2026 <a href="https://zsobix.xyz/safe"><i class="fa-solid fa-power-off"></i></a></p>
         <div style="clear: both;"></div>
     </header>
     <div class="shortcuts">
@@ -35,6 +36,22 @@
                 Stardance <br> Stats
             </div>
         </div>
+        <div class="shortcut" id="infowindowshortcut">
+            <div class="shortcuticon">
+                <i class="fa-solid fa-circle-info" style="font-size: 20px;"></i>
+            </div>
+            <div class="shortcuttext">
+                About
+            </div>
+        </div>
+        <div class="shortcut" id="settingswindowshortcut">
+            <div class="shortcuticon">
+                <i class="fa-solid fa-gear" style="font-size: 20px;"></i>
+            </div>
+            <div class="shortcuttext">
+                Settings
+            </div>
+        </div>
     </div>
     <div id="weatherwindow" class="window" style="display: none;">
         <header id="weatherwindowheader" class="windowheader">
@@ -46,7 +63,7 @@
             Loading...
         </div>
     </div>
-    <div id="starwindow" class="window"  style="display: none;">
+    <div id="starwindow" class="window" style="display: none;">
         <header id="starwindowheader" class="windowheader">
             <div class="headername">Stardance <i class="fa-solid fa-star"></i></div>
             <div class="headerclose"><i class="fa-solid fa-xmark"></i></div>
@@ -58,6 +75,27 @@
             <button class="starsave" id="starsave">Save</button>
             <p id="error01" class="inter error" style="display: none;">Unknown username!</p>
             <p id="error02" class="inter error" style="display: none;">Please fill the username field!</p>
+        </div>
+    </div>
+    <div id="infowindow" class="window" style="display: none;">
+        <header id="infowindowheader" class="windowheader">
+            <div class="headername">About <i class="fa-solid fa-circle-info"></i></div>
+            <div class="headerclose"><i class="fa-solid fa-xmark"></i></div>
+            <div style="clear: both;"></div>
+        </header>
+        <div class="windowcontent" id="markdown">
+            <md-block src="https://raw.githubusercontent.com/zsobix/realinux/refs/heads/main/README.md"></md-block>
+        </div>
+    </div>
+    <div id="settingswindow" class="window" style="display: none;">
+        <header id="settingswindow" class="windowheader">
+            <div class="headername">Settings <i class="fa-solid fa-gear"></i></div>
+            <div class="headerclose"><i class="fa-solid fa-xmark"></i></div>
+            <div style="clear: both;"></div>
+        </header>
+        <div class="windowcontent" id="markdown">
+            <p class="colortext">Primary color:</p>
+            <input type="color" value="#FFFFFF" id="colorpick"/> 
         </div>
     </div>
 </body>

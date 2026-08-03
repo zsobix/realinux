@@ -1,4 +1,5 @@
 :root {
+    --primary-color: #FFFFFF;
     --input-color: hsl(0, 0%, 30%);
     --input-hover-color: hsl(0, 0%, 40%);
 }
@@ -28,18 +29,19 @@ html {
 .clock {
     float: right;
     margin: 0;
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 .clock a {
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 .clock a:hover {
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 header {
+    position: relative;
     border-radius: 10px;
     padding: 5px;
     padding-left: 15px;
@@ -55,13 +57,13 @@ header {
     position: fixed;
     left: 50%;
     margin: 0;
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 .left {
     float: left;
     margin: 0;
-    color: aliceblue;
+    color: var(--primary-color);
 }
 
 .window {
@@ -70,7 +72,10 @@ header {
     border-radius: 10px;
     width: fit-content;
     height: fit-content;
-    color: aliceblue;
+    color: var(--primary-color);
+    border-style: dashed;
+    border-width: 3px;
+    border-color: var(--primary-color);
 }
 
 .windowheader {
@@ -100,7 +105,7 @@ header {
     border-radius: 10px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.3);
-    color: white;
+    color: var(--primary-color);
     border-color: rgba(0, 0, 0, 0.6);
     border-style: solid;
     border-width: 4px;
@@ -123,7 +128,7 @@ header {
     background-color: var(--input-color);
     border-width: 3px;
     border-style: dashed;
-    border-color: white;
+    border-color: var(--primary-color);
     font-size: 2.5vh;
     padding: 5px;
 }
@@ -148,8 +153,8 @@ header {
     background-color: #27272E;
     border-width: 3px;
     border-style: solid;
-    border-color: white;
-    color: white;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     font-size: 16px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -166,4 +171,38 @@ header {
 
 .shortcuts {
     width: fit-content;
+}
+
+.focused {
+    border-style: solid;
+}
+
+#markdown {
+    overflow: auto; 
+    max-width: 500px; 
+    max-height: 500px;
+    font-size: 16px;
+}
+
+#markdown a {
+    color: var(--primary-color)
+}
+
+#markdown a:hover {
+    color: rgb(180, 180, 180);
+}
+
+#colorpick {
+    width: 250px; 
+    margin-top: 10px;
+    background-color: #27272E;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.colortext {
+    text-align: center; 
+    margin: 0;
+    font-size: 20px;
 }
